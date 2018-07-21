@@ -1,18 +1,26 @@
-import {compose, lifecycle} from 'recompose';
+import {branch, compose, lifecycle, renderComponent} from 'recompose';
 import {connect} from 'react-redux';
 import {BeersLayout} from './BeersLayout';
 import {getBeers} from './actions';
+import {beersSelector} from './selectors';
+import {Loading} from '../../components/Loading';
+import {withSceneTitle} from '../../hocs/withSceneTitle';
+
+const mapStateToProps = state => ({
+    beers: beersSelector(state)
+});
 
 const mapDispatchToProps = {getBeers};
 
 const Beers = compose(
-    connect(undefined, mapDispatchToProps),
+    withSceneTitle(),
+    connect(mapStateToProps, mapDispatchToProps),
     lifecycle({
         componentDidMount() {
             this.props.getBeers();
         }
     }),
-)
-(BeersLayout);
+    branch(props => !props.beers, renderComponent(Loading))
+)(BeersLayout);
 
 export {Beers};

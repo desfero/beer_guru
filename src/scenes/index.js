@@ -17,7 +17,7 @@ const Scenes = () => (
             <Route
                 exact
                 path={ROOT}
-                render={() => <Beers />}
+                render={() => <Beers title="Beers list" />}
             />
         </Switch>
     </Router>

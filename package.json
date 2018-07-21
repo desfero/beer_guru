@@ -6,6 +6,7 @@
     "isomorphic-fetch": "^2.2.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-helmet": "^5.2.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
@@ -13,7 +14,9 @@
     "redux": "^4.0.0",
     "redux-actions": "^2.4.0",
     "redux-devtools-extension": "^2.13.5",
-    "redux-saga": "^0.16.0"
+    "redux-saga": "^0.16.0",
+    "reselect": "^3.0.1",
+    "styled-components": "^3.3.3"
   },
   "scripts": {
     "start": "react-scripts start",

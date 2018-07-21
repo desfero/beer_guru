@@ -7,7 +7,9 @@ import {Scenes} from './scenes';
 
 const App = () => (
     <Provider store={store}>
-        <Scenes />
+        <main>
+            <Scenes />
+        </main>
     </Provider>
 );
 
