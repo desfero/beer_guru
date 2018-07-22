@@ -1,16 +1,26 @@
-import {propEq, find, ifElse, always, and} from 'ramda';
+import {ifElse, always, and} from 'ramda';
 import {createSelector} from 'reselect';
-import {beersSelector, selectedBeerIdSelector} from './reducer';
+import {beersOrderSelector, beersSelector, selectedBeerIdSelector} from './reducer';
+
+const beersAsArraySelector = createSelector(
+    beersOrderSelector,
+    beersSelector,
+    ifElse(
+        and,
+        (order, beers) => order.map(id => beers[id]),
+        always(null),
+    ),
+);
 
 const beerSelector = createSelector(
     selectedBeerIdSelector,
     beersSelector,
     ifElse(
         and,
-        (id, beers) => find(propEq('id', +id), beers),
+        (id, beers) => beers[id],
         always(null),
     ),
 );
 
 
-export {beersSelector, beerSelector};
+export {beersAsArraySelector, beerSelector};

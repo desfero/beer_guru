@@ -14,7 +14,6 @@ const BeersLayout = ({beers}) => (
                 </Card>
             ))
         }
-
     </CardGroup>
 );
 

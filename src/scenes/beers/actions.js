@@ -1,9 +1,10 @@
 import { createActions, createAction } from 'redux-actions';
 
 const { getBeers, getBeersSuccess, getBeersError } = createActions({
+    GET_BEERS: page => ({ page }),
     GET_BEERS_SUCCESS: beers => ({ beers }),
     GET_BEERS_ERROR: error => ({ error }),
-}, 'GET_BEERS');
+});
 
 const { getBeer, getBeerSuccess, getBeerError } = createActions({
     GET_BEER_SUCCESS: beer => ({ beer }),
