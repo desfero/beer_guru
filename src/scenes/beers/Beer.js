@@ -18,7 +18,6 @@ const Beer = compose(
     connect(mapStateToProps, mapDispatchToProps),
     lifecycle({
         componentDidMount() {
-            console.log(this.props);
             this.props.setActiveBeer(this.props.id);
         }
     }),

@@ -22,9 +22,8 @@ const Beers = compose(
         }
     }),
     branch(props => !props.beers, renderComponent(Loading)),
-    withSceneTitle(() => "Beers list"),
-    withInfiniteScroll(props => ({ loadMore: props.getBeers, hasMore: true })),
-
+    withSceneTitle(() => 'Beers list'),
+    withInfiniteScroll(props => ({loadMore: props.getBeers, hasMore: true})),
 )(BeersLayout);
 
 export {Beers};
