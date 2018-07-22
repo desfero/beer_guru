@@ -1,10 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import {Beers, beersReducer, beersSaga} from './beers';
-import {ROOT} from '../constants/routes';
+import {Route, Switch} from 'react-router-dom';
+import {Beers, beersReducer, beersSaga, Beer} from './beers';
+import {BEER_ROUTE, ROOT_ROUTE} from '../constants/routes';
+import {beerSaga} from './beers/sagas';
 
 const sagas = [
     beersSaga(),
+    beerSaga(),
 ];
 
 const reducers = {
@@ -12,15 +14,19 @@ const reducers = {
 };
 
 const Scenes = () => (
-    <Router>
+    <React.Fragment>
         <Switch>
             <Route
-                exact
-                path={ROOT}
-                render={() => <Beers title="Beers list" />}
+                path={ROOT_ROUTE}
+                render={() => <Beers/>}
             />
         </Switch>
-    </Router>
+        <Route
+            exact
+            path={BEER_ROUTE}
+            render={({match}) => <Beer id={match.params.beerId}/>}
+        />
+    </React.Fragment>
 );
 
-export { Scenes, sagas, reducers };
+export {Scenes, sagas, reducers};

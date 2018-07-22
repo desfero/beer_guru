@@ -1,6 +1,6 @@
 import {call, put, takeLatest} from 'redux-saga/effects';
 import {API} from './services';
-import {getBeers, getBeersError, getBeersSuccess} from './actions';
+import {getBeers, getBeersError, getBeersSuccess, setActiveBeer} from './actions';
 
 function* fetchBeers() {
     try {
@@ -11,8 +11,20 @@ function* fetchBeers() {
     }
 }
 
+function* fetchBeer({ payload }) {
+    try {
+
+    } catch (e) {
+
+    }
+}
+
 function* beersSaga() {
     yield takeLatest(getBeers, fetchBeers);
 }
 
-export {beersSaga};
+function* beerSaga() {
+    yield takeLatest(setActiveBeer, fetchBeer);
+}
+
+export {beersSaga, beerSaga};
