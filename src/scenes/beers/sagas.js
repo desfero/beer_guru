@@ -1,9 +1,9 @@
-import {call, put, takeLatest} from 'redux-saga/effects';
-import {API} from './services';
-import {getBeers, getBeersError, getBeersSuccess, setActiveBeer} from './actions';
+import {call, put, takeLatest, select} from 'redux-saga/effects';
+import {API} from './api';
+import {getBeerError, getBeers, getBeersError, getBeersSuccess, getBeerSuccess, setActiveBeer} from './actions';
+import {beerSelector} from './selectors';
 
 function* fetchBeers({ payload }) {
-
     try {
         const beers = yield call(API.fetchBeers, payload.page);
         yield put(getBeersSuccess(beers));
@@ -12,11 +12,19 @@ function* fetchBeers({ payload }) {
     }
 }
 
-function* fetchBeer({ payload }) {
+
+
+function* fetchBeerIfNeeded({ payload }) {
     try {
+        const beer = yield select(beerSelector);
 
+        if (!beer) {
+            const fetchedBeer = yield call(API.fetchBeer, payload.id);
+            yield put(getBeerSuccess(fetchedBeer));
+
+        }
     } catch (e) {
-
+        yield put(getBeerError(e));
     }
 }
 
@@ -25,7 +33,7 @@ function* beersSaga() {
 }
 
 function* beerSaga() {
-    yield takeLatest(setActiveBeer, fetchBeer);
+    yield takeLatest(setActiveBeer, fetchBeerIfNeeded);
 }
 
 export {beersSaga, beerSaga};
