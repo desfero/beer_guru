@@ -2,11 +2,9 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import {Beers, beersReducer, beersSaga, Beer} from './beers';
 import {BEER_ROUTE, ROOT_ROUTE} from '../constants/routes';
-import {beerSaga} from './beers/sagas';
 
 const sagas = [
     beersSaga(),
-    beerSaga(),
 ];
 
 const reducers = {

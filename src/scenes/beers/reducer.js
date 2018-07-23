@@ -1,9 +1,9 @@
 import {handleActions} from 'redux-actions';
 import {
-    compose, lensProp, set, view, over, assoc,
+    compose, lensProp, set, view, over, assoc, empty,
     indexBy, prop, merge, concat, defaultTo,  __
 } from 'ramda';
-import {getBeersSuccess, getBeerSuccess, setActiveBeer} from './actions';
+import {getBeerNotFound, getBeersSuccess, getBeerSuccess, setActiveBeer} from './actions';
 
 const defaultState = {
     byId: undefined,
@@ -28,6 +28,7 @@ const beersReducer = handleActions({
             )(state)
         },
         [getBeerSuccess]: (state, {payload}) => over(beersLens, assoc(payload.beer.id, payload.beer), state),
+        [getBeerNotFound]: (state, {payload}) => over(beersLens, assoc(payload.beerId, {}), state),
         [setActiveBeer]: (state, {payload}) => set(selectedBeerIdLens, payload.id, state),
     },
     defaultState,

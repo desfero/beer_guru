@@ -1,5 +1,5 @@
 import {all} from 'redux-saga/effects';
-import {sagas} from '../scenes';
+import {sagas} from '../sagas';
 
 function* rootSaga() {
     yield all(sagas);

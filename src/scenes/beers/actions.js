@@ -1,23 +1,21 @@
 import { createActions, createAction } from 'redux-actions';
 
-const { getBeers, getBeersSuccess, getBeersError } = createActions({
+const { getBeers, getBeersSuccess } = createActions({
     GET_BEERS: page => ({ page }),
     GET_BEERS_SUCCESS: beers => ({ beers }),
-    GET_BEERS_ERROR: error => ({ error }),
 });
 
-const { getBeerSuccess, getBeerError } = createActions({
+const { getBeerSuccess, getBeerNotFound } = createActions({
     GET_BEER_SUCCESS: beer => ({ beer }),
-    GET_BEER_ERROR: error => ({ error }),
+    GET_BEER_NOT_FOUND: beerId => ({ beerId }),
 });
 
 const setActiveBeer = createAction('SET_ACTIVE_BEER', id => ({ id }));
 
 export {
     getBeers,
-    getBeersError,
     getBeersSuccess,
     getBeerSuccess,
-    getBeerError,
+    getBeerNotFound,
     setActiveBeer,
 }

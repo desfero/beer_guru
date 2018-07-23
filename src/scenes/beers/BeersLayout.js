@@ -12,6 +12,7 @@ const BeersLayout = ({beers}) => (
                     <h2>
                         {beer.name}
                     </h2>
+                    <p>{beer.tagline}</p>
                 </LinkCard>
             ))
         }

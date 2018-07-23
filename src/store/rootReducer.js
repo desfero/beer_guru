@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-import {reducers} from '../scenes';
+import {reducers} from '../reducers';
 
 const rootReducer = combineReducers(reducers);
 

@@ -4,4 +4,6 @@ const BeerLayout = ({ beer }) => (
         <h3>{beer.name}</h3>
 );
 
-export {BeerLayout};
+const BeerNotFoundLayout = () => 'Beer with specified id not found';
+
+export {BeerLayout, BeerNotFoundLayout};

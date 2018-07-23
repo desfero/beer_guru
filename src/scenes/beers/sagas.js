@@ -1,18 +1,17 @@
-import {call, put, takeLatest, select} from 'redux-saga/effects';
+import {call, put, takeLatest, select, takeEvery} from 'redux-saga/effects';
 import {API} from './api';
-import {getBeerError, getBeers, getBeersError, getBeersSuccess, getBeerSuccess, setActiveBeer} from './actions';
+import {getBeerNotFound, getBeers, getBeersSuccess, getBeerSuccess, setActiveBeer} from './actions';
 import {beerSelector} from './selectors';
+import {logCriticalUIError} from '../../actions';
 
 function* fetchBeers({ payload }) {
     try {
         const beers = yield call(API.fetchBeers, payload.page);
         yield put(getBeersSuccess(beers));
     } catch (e) {
-        yield put(getBeersError(e));
+        yield put(logCriticalUIError(e));
     }
 }
-
-
 
 function* fetchBeerIfNeeded({ payload }) {
     try {
@@ -24,16 +23,17 @@ function* fetchBeerIfNeeded({ payload }) {
 
         }
     } catch (e) {
-        yield put(getBeerError(e));
+        if (e.statusCode === 404) {
+            yield put(getBeerNotFound(payload.id));
+        } else {
+            yield put(logCriticalUIError(e));
+        }
     }
 }
 
 function* beersSaga() {
-    yield takeLatest(getBeers, fetchBeers);
-}
-
-function* beerSaga() {
+    yield takeEvery(getBeers, fetchBeers);
     yield takeLatest(setActiveBeer, fetchBeerIfNeeded);
 }
 
-export {beersSaga, beerSaga};
+export {beersSaga};

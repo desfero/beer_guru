@@ -2,11 +2,12 @@ import React from 'react';
 import {branch, compose, lifecycle, renderComponent, withHandlers} from 'recompose';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
+import {isEmpty} from 'ramda';
 import {setActiveBeer} from './actions';
 import {beerSelector} from './selectors';
 import {Loading} from '../../components/Loading';
 import {withSceneTitle} from '../../hocs/withSceneTitle';
-import {BeerLayout} from './BeerLayout';
+import {BeerLayout, BeerNotFoundLayout} from './BeerLayout';
 import {withModal} from '../../hocs/withModal';
 import {ROOT_ROUTE} from '../../constants/routes';
 
@@ -31,6 +32,7 @@ const Beer = compose(
         onRequestClose: props.closeModal,
     })),
     branch(props => !props.beer, renderComponent(Loading)),
+    branch(props => isEmpty(props.beer), renderComponent(BeerNotFoundLayout)),
     withSceneTitle(beer => beer.name),
 )(BeerLayout);
 
