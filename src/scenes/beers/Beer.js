@@ -1,4 +1,3 @@
-import React from 'react';
 import {branch, compose, lifecycle, renderComponent, withHandlers} from 'recompose';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
@@ -22,7 +21,7 @@ const Beer = compose(
     connect(mapStateToProps, mapDispatchToProps),
     lifecycle({
         componentDidMount() {
-            this.props.setActiveBeer(this.props.id);
+            this.props.setActiveBeer(+this.props.id);
         }
     }),
     withHandlers({

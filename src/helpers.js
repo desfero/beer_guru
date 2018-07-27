@@ -1,3 +1,5 @@
+import { map, toPairs, compose, join } from 'ramda';
+
 class FetchError extends Error {
     name = 'FetchError';
     constructor({ statusCode, message, error }) {
@@ -9,6 +11,8 @@ class FetchError extends Error {
     }
 }
 
+
+// change to composeP
 const fetchWithError = (...args) => fetch(...args)
     .then(response => Promise.all([response.ok, response.json()]))
     .then(([responseOk, body]) => {
@@ -19,4 +23,16 @@ const fetchWithError = (...args) => fetch(...args)
         }
     });
 
-export {fetchWithError, FetchError};
+// const queryString = Object.keys(params).map((key) => {
+//     return encodeURIComponent(key) + '=' + encodeURIComponent(params[key])
+// }).join('&');
+
+const applyThreshold = (value, direction, threshold = 0.5) => value * (direction + threshold) * direction;
+
+const queryString = compose(
+    join('&'),
+    map(join('=')),
+    toPairs,
+);
+
+export {fetchWithError, FetchError, queryString, applyThreshold};

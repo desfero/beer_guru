@@ -3,7 +3,7 @@ import './App.css';
 import React from 'react';
 import {connect, Provider} from 'react-redux';
 import {BrowserRouter as Router} from 'react-router-dom';
-import {branch, compose, lifecycle, renderComponent, withState} from 'recompose';
+import {branch, compose, lifecycle, renderComponent} from 'recompose';
 import {store} from './store';
 import {Scenes} from './scenes';
 import {CriticalUIError} from './components/CriticalUIError';

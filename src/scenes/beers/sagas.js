@@ -1,19 +1,50 @@
 import {call, put, takeLatest, select, takeEvery} from 'redux-saga/effects';
 import {API} from './api';
-import {getBeerNotFound, getBeers, getBeersSuccess, getBeerSuccess, setActiveBeer} from './actions';
+import {
+    getBeerNotFound,
+    getBeers,
+    getBeersSuccess,
+    getBeerSuccess,
+    getSimilarBeers,
+    getSimilarBeersError,
+    getSimilarBeersSuccess,
+    setActiveBeer
+} from './actions';
 import {beerSelector} from './selectors';
 import {logCriticalUIError} from '../../actions';
+import {applyThreshold} from '../../helpers';
 
-function* fetchBeers({ payload }) {
+function* fetchBeers({payload}) {
     try {
-        const beers = yield call(API.fetchBeers, payload.page);
+        const beers = yield call(API.fetchBeers, {page: payload.page});
         yield put(getBeersSuccess(beers));
     } catch (e) {
         yield put(logCriticalUIError(e));
     }
 }
 
-function* fetchBeerIfNeeded({ payload }) {
+function* fetchSimilarBeers({payload}) {
+    try {
+        const params = {
+            // Fetch one more than needed as response will also contain selected beer
+            per_page: 4,
+            abv_gt: Math.round(applyThreshold(payload.abv, -1)),
+            abv_lt: Math.round(applyThreshold(payload.abv, +1)),
+            ibu_gt: Math.round(applyThreshold(payload.ibu, -1)),
+            ibu_lt: Math.round(applyThreshold(payload.ibu, +1)),
+            ebc_gt: Math.round(applyThreshold(payload.ebc, -1)),
+            ebc_lt: Math.round(applyThreshold(payload.ebc, +1)),
+        };
+
+        const beers = yield call(API.fetchBeers, params);
+
+        yield put(getSimilarBeersSuccess(beers));
+    } catch (e) {
+        yield put(getSimilarBeersError(e));
+    }
+}
+
+function* fetchBeerIfNeeded({payload}) {
     try {
         const beer = yield select(beerSelector);
 
@@ -34,6 +65,7 @@ function* fetchBeerIfNeeded({ payload }) {
 function* beersSaga() {
     yield takeEvery(getBeers, fetchBeers);
     yield takeLatest(setActiveBeer, fetchBeerIfNeeded);
+    yield takeLatest(getSimilarBeers, fetchSimilarBeers);
 }
 
 export {beersSaga};

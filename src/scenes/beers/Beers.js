@@ -1,4 +1,3 @@
-import React from 'react';
 import {branch, compose, lifecycle, renderComponent} from 'recompose';
 import {connect} from 'react-redux';
 import {BeersLayout} from './BeersLayout';
