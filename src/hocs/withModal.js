@@ -1,5 +1,5 @@
 import React from 'react';
-import Modal from 'react-modal';
+import {Modal} from '../components/Modal';
 
 const withModal = getModalProps => Wrapper => props => {
     const modalProps = getModalProps(props);

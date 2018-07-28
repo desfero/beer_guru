@@ -9,12 +9,19 @@ import {Scenes} from './scenes';
 import {CriticalUIError} from './components/CriticalUIError';
 import {logCriticalUIError} from './actions';
 import {criticalUIErrorSelector} from './reducers';
+import {Header} from './components/Header';
+import {Container} from './components/Container';
 
 const AppLayout = () => (
     <Router>
-        <main>
-            <Scenes/>
-        </main>
+        <Container>
+            <header>
+                <Header/>
+            </header>
+            <main>
+                <Scenes/>
+            </main>
+        </Container>
     </Router>
 );
 
