@@ -1,4 +1,3 @@
-import {identity} from 'ramda';
 import {createActions, createAction} from 'redux-actions';
 
 const {getBeers, getBeersSuccess} = createActions({
@@ -12,10 +11,8 @@ const {getBeerSuccess, getBeerNotFound} = createActions({
 });
 
 const {getSimilarBeers, getSimilarBeersSuccess, getSimilarBeersError} = createActions({
-    GET_SIMILAR_BEERS: identity,
-    GET_SIMILAR_BEERS_SUCCESS: beers => ({beers}),
-    GET_SIMILAR_BEERS_ERROR: identity,
-});
+    GET_SIMILAR_BEERS_SUCCESS: beers => ({beers})
+}, 'GET_SIMILAR_BEERS', 'GET_SIMILAR_BEERS_ERROR');
 
 const setActiveBeer = createAction('SET_ACTIVE_BEER', id => ({id}));
 
