@@ -1,5 +1,5 @@
 import {css} from 'styled-components';
-import {map} from 'ramda';
+import {compose, map} from 'ramda';
 
 const sizes = {
     desktop: 992,
@@ -7,9 +7,13 @@ const sizes = {
     phone: 576
 };
 
-const media = map(
-    size => (...args) => css`@media (max-width: ${size}px) { ${css(...args)} }`,
-    sizes
-);
+const maxWidthMediaQuery = size => `(max-width: ${size}px)`;
 
-export {sizes, media};
+const media = compose(
+    map(mediaQuery => (...args) => css`@media ${mediaQuery} { ${css(...args)} }`),
+    map(maxWidthMediaQuery),
+)(sizes);
+
+const isPhone = () => compose(matchMedia, maxWidthMediaQuery)(sizes.phone);
+
+export {sizes, media, isPhone};
