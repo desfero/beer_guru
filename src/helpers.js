@@ -1,8 +1,9 @@
-import { map, toPairs, compose, join } from 'ramda';
+import {map, toPairs, compose, join} from 'ramda';
 
 class FetchError extends Error {
     name = 'FetchError';
-    constructor({ statusCode, message, error }) {
+
+    constructor({statusCode, message, error}) {
         super(`${statusCode}: ${message} - ${error}`);
 
         this.statusCode = statusCode;

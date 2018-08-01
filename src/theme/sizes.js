@@ -1,5 +1,5 @@
-import {css} from 'styled-components';
 import {compose, map} from 'ramda';
+import {css} from 'styled-components';
 
 const sizes = {
     desktop: 992,
@@ -16,4 +16,5 @@ const media = compose(
 
 const isPhone = () => compose(matchMedia, maxWidthMediaQuery)(sizes.phone);
 
-export {sizes, media, isPhone};
+export {media, isPhone};
+
