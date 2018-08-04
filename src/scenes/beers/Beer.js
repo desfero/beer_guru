@@ -22,10 +22,13 @@ const Beer = compose(
     lifecycle({
         componentDidMount() {
             this.props.setActiveBeer(+this.props.id);
-        }
+        },
+        componentDidUpdate() {
+            this.props.setActiveBeer(+this.props.id);
+        },
     }),
     withHandlers({
-       closeModal: ({history}) => () => history.push(ROOT_ROUTE),
+        closeModal: ({history}) => () => history.push(ROOT_ROUTE),
     }),
     withModal(props => ({
         onRequestClose: props.closeModal,

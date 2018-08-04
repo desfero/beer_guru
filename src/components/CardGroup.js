@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const CardGroup = styled.section`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 15px;
+    grid-gap: 25px;
 `;
 
-export { CardGroup };
+export {CardGroup};

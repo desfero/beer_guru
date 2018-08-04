@@ -3,16 +3,14 @@ import {CardGroup} from '../../components/CardGroup';
 import {LinkCard} from '../../components/Card';
 import {BEER_ROUTE, withParams} from '../../constants/routes';
 
-const BeersLayout = ({beers}) => (
+const BeersLayout = ({beers, cardType, showBeerTagline}) => (
     <CardGroup>
         {
             beers.map(beer => (
-                <LinkCard key={beer.id} to={withParams(BEER_ROUTE, { beerId: beer.id })}>
+                <LinkCard type={cardType} key={beer.id} to={withParams(BEER_ROUTE, {beerId: beer.id})}>
                     <img src={beer.image_url} alt="" height="100"/>
-                    <h2>
-                        {beer.name}
-                    </h2>
-                    <p>{beer.tagline}</p>
+                    <h2>{beer.name}</h2>
+                    {showBeerTagline && <p>{beer.tagline}</p>}
                 </LinkCard>
             ))
         }
