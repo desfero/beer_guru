@@ -6,6 +6,7 @@ import {similarBeersAsArraySelector} from './selectors';
 import {Loading} from '../../components/Loading';
 import {similarBeersErrorSelector} from './reducer';
 import {cardType} from '../../components/Card';
+import {whereEq} from 'ramda';
 
 const mapStateToProps = state => ({
     beers: similarBeersAsArraySelector(state),
@@ -18,11 +19,16 @@ const SimilarBeers = compose(
     connect(mapStateToProps, mapDispatchToProps),
     lifecycle({
         componentDidMount() {
-            this.props.getSimilarBeers({
-                ibu: this.props.ibu,
-                abv: this.props.abv,
-                ebc: this.props.ebc,
-            });
+            const {ibu, abv, ebc} = this.props.beer;
+
+            this.props.getSimilarBeers({ibu, abv, ebc});
+        },
+        componentDidUpdate(prevProps) {
+            if (this.props.beer !== prevProps.beer) {
+                const {ibu, abv, ebc} = this.props.beer;
+
+                this.props.getSimilarBeers({ibu, abv, ebc});
+            }
         }
     }),
     branch(props => props.fetchError, renderNothing),

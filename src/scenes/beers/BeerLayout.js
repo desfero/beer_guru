@@ -27,7 +27,7 @@ const BeerLayout = ({beer}) => (
             </ul>
         </section>
         <aside>
-            <SimilarBeers ebc={beer.ebc} abv={beer.abv} ibu={beer.ibu}/>
+            <SimilarBeers beer={beer}/>
         </aside>
     </section>
 );

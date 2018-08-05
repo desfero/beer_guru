@@ -3,14 +3,10 @@ import {PUNK_API_URL} from '../../constants/config';
 import {fetchWithError, queryString} from '../../helpers';
 import {isPhone} from '../../theme/sizes';
 
-const BEERS_PER_PAGE_DESKTOP = 21;
-const BEERS_PER_PAGE_PHONE = 9;
+const PER_PAGE_DESKTOP = always(21);
+const PER_PAGE_PHONE = always(9);
 
-const getBeersPerPage = ifElse(
-    isPhone,
-    always(BEERS_PER_PAGE_PHONE),
-    always(BEERS_PER_PAGE_DESKTOP)
-);
+const getBeersPerPage = ifElse(isPhone, PER_PAGE_PHONE, PER_PAGE_DESKTOP);
 
 const fetchBeers = ({
     per_page = getBeersPerPage(),
