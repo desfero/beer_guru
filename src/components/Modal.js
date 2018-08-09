@@ -6,12 +6,12 @@ const overlayClassName = 'modal-overlay';
 
 injectGlobal`
   .${overlayClassName} {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
     background-color: rgba(255, 255, 255, 0.75);
+    bottom: 0px;
+    left: 0px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
   }
 `;
 
@@ -20,16 +20,17 @@ const Modal = styled(ReactModal).attrs({
 })`
     ${containerStyles}
 
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    right: 40px;
-    bottom: 40px;
-    border: 1px solid rgb(204, 204, 204);
     background: rgb(255, 255, 255);
-    overflow: auto;
     border-radius: 4px;
+    border: 1px solid rgb(204, 204, 204);
+    left: 40px;
+    max-height: 90vh;
     outline: none;
+    overflow: auto;
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translate(0, -50%);
 `;
 
 export {Modal};
