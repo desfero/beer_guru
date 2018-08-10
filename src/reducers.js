@@ -5,13 +5,14 @@ import {
 import {logCriticalUIError} from './actions';
 import {reducers as sceneReducers} from './scenes';
 
-const defaultState = {
-    criticalUIError: null
-};
-
 const layoutReducerLens = lensProp('layout');
 const criticalUIErrorLens = lensProp('criticalUIError');
 
+console.log(layoutReducerLens);
+
+const defaultState = compose(
+    set(criticalUIErrorLens, null),
+)({});
 
 const layoutReducer = handleActions({
         [logCriticalUIError]: (state, {payload, meta}) =>

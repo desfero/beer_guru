@@ -1,35 +1,62 @@
 import React from 'react';
+import styled from 'styled-components';
 import {SimilarBeers} from './SimilarBeers';
 
+const BeerContainer = styled.section`
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+`;
+
+const BeerImg = styled.img.attrs({
+    alt: '',
+})`
+    margin-right: 2em;
+    width: 80px;
+`;
+
+const BeerSection = styled.section`
+    flex: 1;
+`;
+
 const BeerLayout = ({beer}) => (
-    <section>
-        <header>
-            <h3>{beer.name}</h3>
-            <p>{beer.tagline}</p>
-        </header>
-        <span>
-            <strong>IBU:</strong> {beer.ibu}
-        </span>
-        <span>
-            <strong>ABV:</strong> {beer.abv}
-        </span>
-        <span>
-            <strong>EBC:</strong> {beer.ebc}
-        </span>
-        <p>{beer.description}</p>
-        <section>
-            <h4>Best served with:</h4>
-            <ul>
-                {
-                    beer.food_pairing
-                        .map((pairing, i) => <li key={i}>{pairing}</li>)
-                }
-            </ul>
-        </section>
+    <React.Fragment>
+        <BeerContainer>
+            <BeerImg src={beer.image_url}/>
+            <BeerSection>
+                <header>
+                    <h3>{beer.name}</h3>
+                    <p>{beer.tagline}</p>
+                </header>
+                <span>
+                <strong>IBU:</strong> {beer.ibu}
+            </span>
+                <span>
+                <strong>ABV:</strong> {beer.abv}
+            </span>
+                <span>
+                <strong>EBC:</strong> {beer.ebc}
+            </span>
+                <p>{beer.description}</p>
+                <section>
+                    <h4>Best served with:</h4>
+                    <ul>
+                        {
+                            beer.food_pairing
+                                .map((pairing, i) => <li key={i}>{pairing}</li>)
+                        }
+                    </ul>
+                </section>
+            </BeerSection>
+        </BeerContainer>
+
         <aside>
-            <SimilarBeers beer={beer}/>
+            <section>
+                <h4>You might also like:</h4>
+                <SimilarBeers beer={beer}/>
+            </section>
         </aside>
-    </section>
+    </React.Fragment>
 );
 
 const BeerNotFoundLayout = () => 'Beer with specified id not found';

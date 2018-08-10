@@ -6,7 +6,6 @@ import {similarBeersAsArraySelector} from './selectors';
 import {Loading} from '../../components/Loading';
 import {similarBeersErrorSelector} from './reducer';
 import {cardType} from '../../components/Card';
-import {whereEq} from 'ramda';
 
 const mapStateToProps = state => ({
     beers: similarBeersAsArraySelector(state),

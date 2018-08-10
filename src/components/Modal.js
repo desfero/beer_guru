@@ -1,12 +1,11 @@
 import ReactModal from 'react-modal';
 import styled, {injectGlobal} from 'styled-components';
-import {containerStyles} from './Container';
 
 const overlayClassName = 'modal-overlay';
 
 injectGlobal`
   .${overlayClassName} {
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(0, 0, 0, 0.7);
     bottom: 0px;
     left: 0px;
     position: fixed;
@@ -18,15 +17,16 @@ injectGlobal`
 const Modal = styled(ReactModal).attrs({
     overlayClassName,
 })`
-    ${containerStyles}
-
     background: rgb(255, 255, 255);
     border-radius: 4px;
     border: 1px solid rgb(204, 204, 204);
     left: 40px;
+    margin: 0 auto;
     max-height: 90vh;
+    max-width: ${props => props.theme.modalWidth};
     outline: none;
     overflow: auto;
+    padding: 20px;
     position: absolute;
     right: 40px;
     top: 50%;

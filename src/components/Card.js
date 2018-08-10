@@ -32,7 +32,7 @@ const Card = styled(omitCardStyleProps(props => <section {...props} />)).attrs({
         `
             box-shadow: 0 0 2px 0 rgba(244,244,244,1); 
             
-            &:focus {
+            &:focus, &:hover {
                 outline: none;
                 transform: scale(1.05, 1.05);
                 box-shadow: 0px 0px 10px 1px rgba(229,229,229,1);
@@ -45,7 +45,7 @@ const Card = styled(omitCardStyleProps(props => <section {...props} />)).attrs({
         `
             border: 1px solid #F2F2F2;
             
-            &:focus {
+            &:focus, &:hover {
                 outline: 1px solid black;
             }
         `

@@ -2,6 +2,8 @@ import {cardType} from '../components/Card';
 
 const theme = {
     bgColor: '#F8F8F8',
+    containerWidth: '700px',
+    modalWidth: '500px',
     card: {
         [cardType.default]: {
             background: '#FFF',
