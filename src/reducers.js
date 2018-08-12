@@ -8,8 +8,6 @@ import {reducers as sceneReducers} from './scenes';
 const layoutReducerLens = lensProp('layout');
 const criticalUIErrorLens = lensProp('criticalUIError');
 
-console.log(layoutReducerLens);
-
 const defaultState = compose(
     set(criticalUIErrorLens, null),
 )({});

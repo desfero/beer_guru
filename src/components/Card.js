@@ -22,7 +22,7 @@ const Card = styled(omitCardStyleProps(props => <section {...props} />)).attrs({
     text-align: center;
     padding: 1.2em 1em 1em;
     text-decoration: none;
-    color: initial;
+    color: inherit;
     overflow: hidden;
     font-size: ${props => props.theme.baseSize};
     
@@ -56,7 +56,7 @@ const Card = styled(omitCardStyleProps(props => <section {...props} />)).attrs({
     }
     
     & > h2 {
-        color: ${props => props.theme.headingColor}
+        color: ${props => props.theme.headingColor || 'inherit'}
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
@@ -65,7 +65,6 @@ const Card = styled(omitCardStyleProps(props => <section {...props} />)).attrs({
     }    
     
     & > p {
-        color: ${props => props.theme.paragraphColor};
         margin-top: 0.4em;
     }
 `;
