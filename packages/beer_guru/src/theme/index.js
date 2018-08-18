@@ -1,15 +1,21 @@
 import {injectGlobal} from 'styled-components';
 import {cardType} from '../components/Card';
 
-const theme = {
-    fontColor: '#707070',
+const base = {
+    fontColor: '#747474',
     bgColor: '#F8F8F8',
+    mainColor: '#F5C34C',
     containerWidth: '700px',
     modalWidth: '500px',
+};
+
+const theme = {
+    ...base,
     card: {
         [cardType.default]: {
             background: '#FFF',
-            headingColor: '#F5C34C',
+            headingColor: base.mainColor,
+            paragraphColor: '#BABABA',
             baseSize: '13px',
         },
         [cardType.lite]: {
@@ -17,6 +23,10 @@ const theme = {
             baseSize: '12px',
         }
     },
+    loader: {
+        indicator: base.mainColor,
+        background: '#EAEAEA',
+    }
 };
 
 // Global styles

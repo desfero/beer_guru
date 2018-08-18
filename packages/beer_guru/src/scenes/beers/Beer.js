@@ -4,7 +4,7 @@ import {withRouter} from 'react-router-dom';
 import {isEmpty} from 'ramda';
 import {setActiveBeer} from './actions';
 import {beerSelector} from './selectors';
-import {Loading} from '../../components/Loading';
+import {BigLoader} from '../../components/Loader';
 import {withSceneTitle} from '../../hocs/withSceneTitle';
 import {BeerLayout, BeerNotFoundLayout} from './BeerLayout';
 import {withModal} from '../../hocs/withModal';
@@ -33,7 +33,7 @@ const Beer = compose(
     withModal(props => ({
         onRequestClose: props.closeModal,
     })),
-    branch(props => !props.beer, renderComponent(Loading)),
+    branch(props => !props.beer, renderComponent(BigLoader)),
     branch(props => isEmpty(props.beer), renderComponent(BeerNotFoundLayout)),
     withSceneTitle(beer => beer.name),
 )(BeerLayout);

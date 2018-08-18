@@ -2,7 +2,7 @@ import {branch, compose, lifecycle, renderComponent, withProps} from 'recompose'
 import {connect} from 'react-redux';
 import {BeersLayout} from './BeersLayout';
 import {getBeers} from './actions';
-import {Loading} from '../../components/Loading';
+import {Loader} from '../../components/Loader';
 import {withSceneTitle} from '../../hocs/withSceneTitle';
 import {withInfiniteScroll} from '../../hocs/withInfiniteScroll';
 import {beersAsArraySelector} from './selectors';
@@ -21,7 +21,7 @@ const Beers = compose(
             this.props.getBeers(1);
         }
     }),
-    branch(props => !props.beers, renderComponent(Loading)),
+    branch(props => !props.beers, renderComponent(Loader)),
     withSceneTitle(() => 'Beers list'),
     withInfiniteScroll(props => ({loadMore: props.getBeers, hasMore: true})),
     withProps({

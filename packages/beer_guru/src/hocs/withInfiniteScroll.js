@@ -1,6 +1,6 @@
 import React from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
-import {Loading} from '../components/Loading';
+import {Loader} from '../components/Loader';
 
 const withInfiniteScroll = getInfiniteScrollProps => Wrapper => props => {
     const infiniteScrollProps = getInfiniteScrollProps(props);
@@ -8,7 +8,7 @@ const withInfiniteScroll = getInfiniteScrollProps => Wrapper => props => {
     return (
         <InfiniteScroll
             pageStart={1}
-            loader={<Loading key={0}/>}
+            loader={<Loader key={0}/>}
             {...infiniteScrollProps}
         >
             <Wrapper {...props} />
