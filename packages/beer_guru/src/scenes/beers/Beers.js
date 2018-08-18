@@ -1,5 +1,6 @@
 import {branch, compose, lifecycle, renderComponent, withProps} from 'recompose';
 import {connect} from 'react-redux';
+import {createStructuredSelector} from 'reselect';
 import {BeersLayout} from './BeersLayout';
 import {getBeers} from './actions';
 import {Loader} from '../../components/Loader';
@@ -7,9 +8,11 @@ import {withSceneTitle} from '../../hocs/withSceneTitle';
 import {withInfiniteScroll} from '../../hocs/withInfiniteScroll';
 import {beersAsArraySelector} from './selectors';
 import {cardType} from '../../components/Card';
+import {hasAllBeersSelector} from './reducer';
 
-const mapStateToProps = state => ({
-    beers: beersAsArraySelector(state)
+const mapStateToProps = createStructuredSelector({
+    beers: beersAsArraySelector,
+    hasAllBeers: hasAllBeersSelector,
 });
 
 const mapDispatchToProps = {getBeers};
@@ -23,7 +26,10 @@ const Beers = compose(
     }),
     branch(props => !props.beers, renderComponent(Loader)),
     withSceneTitle(() => 'Beers list'),
-    withInfiniteScroll(props => ({loadMore: props.getBeers, hasMore: true})),
+    withInfiniteScroll(props => ({
+        loadMore: props.getBeers,
+        hasMore: !props.hasAllBeers,
+    })),
     withProps({
         cardType: cardType.default,
         showBeerTagline: true,

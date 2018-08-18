@@ -8,6 +8,7 @@ import {
     getSimilarBeers,
     getSimilarBeersError,
     getSimilarBeersSuccess,
+    hasAllBeers,
     setActiveBeer
 } from './actions';
 import {beerSelector} from './selectors';
@@ -17,7 +18,13 @@ import {applyThreshold} from '../../helpers';
 function* fetchBeers({payload}) {
     try {
         const beers = yield call(API.fetchBeers, {page: payload.page});
-        yield put(getBeersSuccess(beers));
+
+        if (beers.length) {
+            yield put(getBeersSuccess(beers));
+        } else {
+            yield put(hasAllBeers())
+        }
+
     } catch (e) {
         yield put(logCriticalUIError(e));
     }

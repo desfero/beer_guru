@@ -10,11 +10,13 @@ import {
     getSimilarBeers,
     getSimilarBeersError,
     getSimilarBeersSuccess,
+    hasAllBeers,
     setActiveBeer
 } from './actions';
 
 const beersLens = lensProp('byId');
 const beersOrderLens = lensProp('allIds');
+const hasAllBeersLens= lensProp('hasAllBeers');
 
 const selectedBeerPath = 'selectedBeer';
 const selectedBeerIdLens = lensPath([selectedBeerPath, 'id']);
@@ -27,6 +29,7 @@ const defaultState = compose(
     set(selectedBeerIdLens, undefined),
     set(selectedBeerSimilarBeersIdsLens, undefined),
     set(selectedBeerSimilarErrorLens, undefined),
+    set(hasAllBeersLens, false)
 )({});
 
 const beersReducer = handleActions({
@@ -64,6 +67,9 @@ const beersReducer = handleActions({
         [getSimilarBeersError]: (state, {payload}) => {
             return set(selectedBeerSimilarErrorLens, payload, state)
         },
+        [hasAllBeers]: state => {
+            return set(hasAllBeersLens, true, state);
+        }
     },
     defaultState,
 );
@@ -74,9 +80,10 @@ const beersOrderSelector = view(compose(beersReducerLens, beersOrderLens));
 const selectedBeerIdSelector = view(compose(beersReducerLens, selectedBeerIdLens));
 const similarBeersIdsSelector = view(compose(beersReducerLens, selectedBeerSimilarBeersIdsLens));
 const similarBeersErrorSelector = view(compose(beersReducerLens, selectedBeerSimilarErrorLens));
+const hasAllBeersSelector = view(compose(beersReducerLens, hasAllBeersLens));
 
 export {
     beersReducer, beersSelector, beersOrderSelector,
     selectedBeerIdSelector, similarBeersIdsSelector,
-    similarBeersErrorSelector,
+    similarBeersErrorSelector, hasAllBeersSelector,
 };

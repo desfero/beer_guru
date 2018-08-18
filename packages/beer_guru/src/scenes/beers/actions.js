@@ -1,9 +1,9 @@
 import {createActions, createAction} from 'redux-actions';
 
-const {getBeers, getBeersSuccess} = createActions({
+const {getBeers, getBeersSuccess, hasAllBeers} = createActions({
     GET_BEERS: page => ({page}),
-    GET_BEERS_SUCCESS: beers => ({beers}),
-});
+    GET_BEERS_SUCCESS: beers => ({beers})
+}, 'HAS_ALL_BEERS');
 
 const {getBeerSuccess, getBeerNotFound} = createActions({
     GET_BEER_SUCCESS: beer => ({beer}),
@@ -25,4 +25,5 @@ export {
     getSimilarBeers,
     getSimilarBeersSuccess,
     getSimilarBeersError,
+    hasAllBeers,
 };
