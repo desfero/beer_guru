@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
-import {omitProps} from '../hocs/omitProps';
+import { Link } from 'react-router-dom';
+import { omitProps } from '../../hocs/omitProps';
 
 const cardType = {
     lite: Symbol('lite'),
@@ -28,7 +28,7 @@ const Card = styled(omitCardStyleProps(props => <section {...props} />)).attrs({
     
     
     ${
-        props => props.type === cardType.default && 
+    props => props.type === cardType.default &&
         `
             box-shadow: 0 0 2px 0 rgba(244,244,244,1); 
             
@@ -41,7 +41,7 @@ const Card = styled(omitCardStyleProps(props => <section {...props} />)).attrs({
     }
     
     ${
-        props => props.type === cardType.lite &&
+    props => props.type === cardType.lite &&
         `
             border: 1px solid #F2F2F2;
             
@@ -74,4 +74,4 @@ Card.defaultProps = cardDefaultProps;
 
 const LinkCard = Card.withComponent(omitCardStyleProps(Link));
 
-export {Card, LinkCard, cardType};
+export { Card, LinkCard, cardType };

@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {branch, compose, lifecycle, renderComponent} from 'recompose';
 import {store} from '../store/index';
-import {theme} from '../theme/index';
+import {theme} from '@beer/layout';
 import {CriticalUIError} from './CriticalUIError';
 import {logCriticalUIError} from '../actions';
 import {criticalUIErrorSelector} from '../reducers';

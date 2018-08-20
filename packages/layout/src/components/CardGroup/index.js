@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {media} from '../theme/sizes';
+import {media} from '../../theme/sizes';
 
 const CardGroup = styled.section`
     display: grid;

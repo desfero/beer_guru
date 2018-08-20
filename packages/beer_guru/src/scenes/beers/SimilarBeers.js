@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 import {BeersLayout} from './BeersLayout';
 import {getSimilarBeers} from './actions';
 import {similarBeersAsArraySelector} from './selectors';
-import {Loader} from '../../components/Loader';
+import {Loader} from '@beer/layout';
 import {similarBeersErrorSelector} from './reducer';
-import {cardType} from '../../components/Card';
+import {cardType} from '@beer/layout';
 
 const mapStateToProps = state => ({
     beers: similarBeersAsArraySelector(state),

@@ -1,7 +1,7 @@
 import {always, head, ifElse} from 'ramda';
 import {PUNK_API_URL} from '../../constants/config';
 import {fetchWithError, queryString} from '../../helpers';
-import {isPhone} from '../../theme/sizes';
+import {isPhone} from '@beer/layout';
 
 const PER_PAGE_DESKTOP = always(21);
 const PER_PAGE_PHONE = always(9);

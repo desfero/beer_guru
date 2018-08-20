@@ -4,7 +4,7 @@ import {withRouter} from 'react-router-dom';
 import {isEmpty} from 'ramda';
 import {setActiveBeer} from './actions';
 import {beerSelector} from './selectors';
-import {BigLoader} from '../../components/Loader';
+import {BigLoader} from '@beer/layout';
 import {withSceneTitle} from '../../hocs/withSceneTitle';
 import {BeerLayout, BeerNotFoundLayout} from './BeerLayout';
 import {withModal} from '../../hocs/withModal';
