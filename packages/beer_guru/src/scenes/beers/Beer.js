@@ -2,9 +2,9 @@ import {branch, compose, lifecycle, renderComponent, withHandlers} from 'recompo
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {isEmpty} from 'ramda';
+import {BigLoader} from '@beer/layout';
 import {setActiveBeer} from './actions';
 import {beerSelector} from './selectors';
-import {BigLoader} from '@beer/layout';
 import {withSceneTitle} from '../../hocs/withSceneTitle';
 import {BeerLayout, BeerNotFoundLayout} from './BeerLayout';
 import {withModal} from '../../hocs/withModal';

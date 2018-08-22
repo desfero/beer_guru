@@ -1,32 +1,31 @@
-import {branch, compose, lifecycle, renderComponent, renderNothing, withProps} from 'recompose';
-import {connect} from 'react-redux';
-import {BeersLayout} from './BeersLayout';
-import {getSimilarBeers} from './actions';
-import {similarBeersAsArraySelector} from './selectors';
-import {Loader} from '@beer/layout';
-import {similarBeersErrorSelector} from './reducer';
-import {cardType} from '@beer/layout';
+import { branch, compose, lifecycle, renderComponent, renderNothing, withProps } from 'recompose';
+import { connect } from 'react-redux';
+import { cardType, Loader } from '@beer/layout';
+import { BeersLayout } from './BeersLayout';
+import { getSimilarBeers } from './actions';
+import { similarBeersAsArraySelector } from './selectors';
+import { similarBeersErrorSelector } from './reducer';
 
 const mapStateToProps = state => ({
     beers: similarBeersAsArraySelector(state),
     fetchError: similarBeersErrorSelector(state)
 });
 
-const mapDispatchToProps = {getSimilarBeers};
+const mapDispatchToProps = { getSimilarBeers };
 
 const SimilarBeers = compose(
     connect(mapStateToProps, mapDispatchToProps),
     lifecycle({
         componentDidMount() {
-            const {ibu, abv, ebc} = this.props.beer;
+            const { ibu, abv, ebc } = this.props.beer;
 
-            this.props.getSimilarBeers({ibu, abv, ebc});
+            this.props.getSimilarBeers({ ibu, abv, ebc });
         },
         componentDidUpdate(prevProps) {
             if (this.props.beer !== prevProps.beer) {
-                const {ibu, abv, ebc} = this.props.beer;
+                const { ibu, abv, ebc } = this.props.beer;
 
-                this.props.getSimilarBeers({ibu, abv, ebc});
+                this.props.getSimilarBeers({ ibu, abv, ebc });
             }
         }
     }),
@@ -38,4 +37,4 @@ const SimilarBeers = compose(
     })
 )(BeersLayout);
 
-export {SimilarBeers};
+export { SimilarBeers };
