@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@beer/layout": "1.0.0",
     "isomorphic-fetch": "^2.2.1",
     "ramda": "^0.25.0",
     "raven-for-redux": "^1.3.1",

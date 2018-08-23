@@ -3,11 +3,11 @@ import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import {BeersLayout} from './BeersLayout';
 import {getBeers} from './actions';
-import {Loader} from '../../components/Loader';
+import {Loader} from '@beer/layout';
 import {withSceneTitle} from '../../hocs/withSceneTitle';
 import {withInfiniteScroll} from '../../hocs/withInfiniteScroll';
 import {beersAsArraySelector} from './selectors';
-import {cardType} from '../../components/Card';
+import {cardType} from '@beer/layout';
 import {hasAllBeersSelector} from './reducer';
 
 const mapStateToProps = createStructuredSelector({

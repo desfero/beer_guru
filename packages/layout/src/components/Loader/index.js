@@ -1,8 +1,8 @@
 import React from 'react';
-import {keyframes} from 'styled-components';
-import {defaultProps, compose, withProps} from 'recompose';
-import {always, cond, equals, prop} from 'ramda';
-import {styled} from '../helpers';
+import { keyframes } from 'styled-components';
+import { defaultProps, compose, withProps } from 'recompose';
+import { always, cond, equals, prop } from 'ramda';
+import { styled } from '../../helpers/styled';
 
 const LOADER_SIZE = {
     small: Symbol('small'),
@@ -24,7 +24,7 @@ const rotate360 = keyframes`
   }
 `;
 
-const Spinner = styled.div({omitProps: ['size']})`
+const Spinner = styled.div({ omitProps: ['size'] })`
   margin: 5em auto;
   font-size: ${compose(getFontSize, prop('size'))};
   text-indent: -9999px;
@@ -39,7 +39,7 @@ const Spinner = styled.div({omitProps: ['size']})`
   height: 3em;
 `;
 
-const LoaderLayout = ({size}) => <Spinner size={size}>Loading...</Spinner>;
+const LoaderLayout = ({ size }) => <Spinner size={size}>Loading...</Spinner>;
 
 const Loader = compose(
     defaultProps({
@@ -49,4 +49,4 @@ const Loader = compose(
 
 const BigLoader = withProps({ size: LOADER_SIZE.big })(Loader);
 
-export {Loader, BigLoader};
+export { Loader, BigLoader };

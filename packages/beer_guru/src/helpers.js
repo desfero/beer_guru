@@ -1,6 +1,5 @@
 import React from 'react';
-import {map, toPairs, compose, join, omit, is} from 'ramda';
-import styledComponents from 'styled-components';
+import {map, toPairs, compose, join } from 'ramda';
 
 class FetchError extends Error {
     name = 'FetchError';
@@ -38,10 +37,4 @@ const queryString = compose(
     toPairs,
 );
 
-const styled = new Proxy(styledComponents, {
-    get(target, name) {
-        return (...args) => is(Object, args[0]) ? target(props => React.createElement(name, omit(args[0].omitProps, props))) : target[name];
-    }
-});
-
-export {fetchWithError, FetchError, queryString, applyThreshold, styled};
+export { fetchWithError, FetchError, queryString, applyThreshold };

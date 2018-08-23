@@ -1,6 +1,6 @@
 import React from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
-import {Loader} from '../components/Loader';
+import {Loader} from '@beer/layout';
 
 const withInfiniteScroll = getInfiniteScrollProps => Wrapper => props => {
     const infiniteScrollProps = getInfiniteScrollProps(props);

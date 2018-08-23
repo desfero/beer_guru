@@ -33,4 +33,4 @@ const Modal = styled(ReactModal).attrs({
     transform: translate(0, -50%);
 `;
 
-export {Modal};
+export { Modal };
