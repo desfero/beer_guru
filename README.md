@@ -5,3 +5,4 @@ React production ready boilerplate [WIP]
 - Configure e2e testing - cypress or testcafe
 - Add some form to the boilerplate
 - Configure eslint with prettier 
+- Add Server Side rendering
