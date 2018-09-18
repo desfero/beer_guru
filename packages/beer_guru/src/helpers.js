@@ -1,4 +1,3 @@
-import React from 'react';
 import {map, toPairs, compose, join } from 'ramda';
 
 class FetchError extends Error {
@@ -12,7 +11,6 @@ class FetchError extends Error {
         this.code = error;
     }
 }
-
 
 // change to composeP
 const fetchWithError = (...args) => fetch(...args)

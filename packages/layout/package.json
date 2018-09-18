@@ -15,7 +15,9 @@
     "test:watch": "react-scripts test --env=jsdom",
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "prepare": "yarn run build"
+    "prepare": "yarn run build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
@@ -24,7 +26,11 @@
     "react-router-dom": "^4.3.1",
     "styled-components": "^3.3.3",
     "ramda": "^0.25.0",
-    "recompose": "^0.27.1"
+    "recompose": "^0.27.1",
+    "@storybook/react": "^3.4.11",
+    "@storybook/addon-actions": "^3.4.11",
+    "@storybook/addon-links": "^3.4.11",
+    "@storybook/addons": "^3.4.11"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -45,7 +51,12 @@
     "react-router-dom": "^4.3.1",
     "styled-components": "^3.3.3",
     "ramda": "^0.25.0",
-    "recompose": "^0.27.1"
+    "recompose": "^0.27.1",
+    "@storybook/react": "^3.4.11",
+    "@storybook/addon-actions": "^3.4.11",
+    "@storybook/addon-links": "^3.4.11",
+    "@storybook/addons": "^3.4.11",
+    "babel-runtime": "^6.26.0"
   },
   "files": [
     "dist"
