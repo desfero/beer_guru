@@ -20,6 +20,7 @@ const Card = styled(omitCardStyleProps(props => <section {...props} />)).attrs({
     background: ${props => props.theme.background};
     border-radius: 3px;
     text-align: center;
+    max-width: 250px;
     padding: 1.2em 1em 1em;
     text-decoration: none;
     color: inherit;
