@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { omitProps } from '../../hocs/omitProps';
+import { omitProps } from '../../../hocs/omitProps/index';
 
 const cardType = {
     lite: Symbol('lite'),
@@ -20,7 +20,6 @@ const Card = styled(omitCardStyleProps(props => <section {...props} />)).attrs({
     background: ${props => props.theme.background};
     border-radius: 3px;
     text-align: center;
-    max-width: 250px;
     padding: 1.2em 1em 1em;
     text-decoration: none;
     color: inherit;

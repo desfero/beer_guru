@@ -20,4 +20,5 @@ const CardGroup = styled.section`
     }  
 `;
 
-export {CardGroup};
+export { cardType, Card, LinkCard } from './Card';
+export { CardGroup };
