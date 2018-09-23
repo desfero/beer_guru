@@ -4,6 +4,7 @@ import {
 } from 'ramda';
 import {logCriticalUIError} from './actions';
 import {reducers as sceneReducers} from './scenes';
+import {localeReducer} from "./reducers/locale";
 
 const layoutReducerLens = lensProp('layout');
 const criticalUIErrorLens = lensProp('criticalUIError');
@@ -24,6 +25,7 @@ const criticalUIErrorSelector = view(compose(layoutReducerLens, criticalUIErrorL
 const reducers = {
     ...sceneReducers,
     layout: layoutReducer,
+    locale: localeReducer
 };
 
 export {criticalUIErrorSelector, reducers};

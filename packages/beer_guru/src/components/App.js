@@ -8,6 +8,7 @@ import {criticalUIErrorSelector} from '../reducers';
 import {withThemeProvider} from '../hocs/withThemeProvider';
 import {withStoreProvider} from '../hocs/withStoreProvider';
 import {AppLayout} from './AppLayout';
+import {withI18N} from '../hocs/withI18N';
 
 const mapStateToProps = state => ({
     criticalUIError: criticalUIErrorSelector(state)
@@ -28,6 +29,7 @@ const App = compose(
         renderComponent(CriticalUIError),
     ),
     withThemeProvider(theme),
+    withI18N(),
 )(AppLayout);
 
 export {App};
