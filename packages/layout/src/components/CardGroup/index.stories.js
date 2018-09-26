@@ -72,3 +72,51 @@ storiesOf('CardGroup', module)
       </LinkCard>
     </CardGroup>
   ));
+
+storiesOf('CardGroup', module)
+  .addDecorator(withStorySource(
+    `import { cardType, Card } from '@beer/layout';
+
+<CardGroup>
+    <Card type={cardType}>
+        <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
+        <h2>Example text</h2>
+        <p>Example desc</p>
+    </Card>
+    <Card type={cardType}>
+        <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
+        <h2>Example text</h2>
+        <p>Example desc</p>
+    </Card>
+    <Card type={cardType}>
+        <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
+        <h2>Example text</h2>
+        <p>Example desc</p>
+    </Card>
+</CardGroup>`
+  ))
+  .add('multiple element', () => (
+    <CardGroup>
+      <Card
+        type={cardType.default}
+      >
+        <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
+        <h2>{title}</h2>
+        <p>{desc}</p>
+      </Card>
+      <Card
+        type={cardType.default}
+      >
+        <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
+        <h2>{title}</h2>
+        <p>{desc}</p>
+      </Card>
+      <Card
+        type={cardType.default}
+      >
+        <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
+        <h2>{title}</h2>
+        <p>{desc}</p>
+      </Card>
+    </CardGroup>
+  ));
