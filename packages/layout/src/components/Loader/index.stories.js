@@ -8,12 +8,19 @@ storiesOf('Loader', module)
   .addDecorator(withStorySource(
     `import { Loader, LOADER_SIZE } from '@beer/layout';
 
-<Loader size={LOADER_SIZE} />`
+<Loader size={LOADER_SIZE.small} />`
   ))
   .add('small', () => (
     <Loader
       size={LOADER_SIZE.small}
     />
+  ));
+
+storiesOf('Loader', module)
+  .addDecorator(withStorySource(
+    `import { BigLoader, LOADER_SIZE } from '@beer/layout';
+
+<BigLoader size={LOADER_SIZE.big} />`
   ))
   .add('big', () => (
     <BigLoader
