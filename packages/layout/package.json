@@ -29,12 +29,10 @@
     "styled-components": "^3.3.3"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "^3.4.11",
     "@storybook/addon-actions": "^3.4.11",
     "@storybook/addon-info": "^3.4.11",
     "@storybook/addon-knobs": "^3.4.11",
     "@storybook/addon-links": "^3.4.11",
-    "@storybook/addon-notes": "^3.4.11",
     "@storybook/addon-storysource": "^3.4.11",
     "@storybook/addon-viewport": "^3.4.11",
     "@storybook/addons": "^3.4.11",

@@ -15,17 +15,6 @@ storiesOf('CardGroup', module)
     <p>Example desc</p>
 </Card>`
   ))
-  .add('Card/default', () => (
-    <CardGroup>
-      <Card
-        type={cardType.default}
-      >
-        <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
-        <h2>{title}</h2>
-        <p>{desc}</p>
-      </Card>
-    </CardGroup>
-  ))
   .add('Card/lite', () => (
     <CardGroup>
       <Card
@@ -47,18 +36,6 @@ storiesOf('CardGroup', module)
     <h2>Example text</h2>
     <p>Example desc</p>
 </LinkCard>`
-  ))
-  .add('LinkCard/default', () => (
-    <CardGroup>
-      <LinkCard
-        type={cardType.default}
-        to={'Modal'}
-      >
-        <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
-        <h2>{title}</h2>
-        <p>{desc}</p>
-      </LinkCard>
-    </CardGroup>
   ))
   .add('LinkCard/lite', () => (
     <CardGroup>
