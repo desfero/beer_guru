@@ -44,7 +44,7 @@
     "react-dom": "^15.0.0 || ^16.0.0",
     "react-router-dom": "^4.3.1",
     "styled-components": "^3.3.3",
-    "ramda": "^0.25.0",
+    "ramda": "^0.26.1",
     "recompose": "^0.30.0"
   },
   "files": [
