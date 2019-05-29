@@ -1,4 +1,4 @@
-const title = 'Modal title';
-const desc = 'Modal description';
+const title = "Modal title";
+const desc = "Modal description";
 
-export { title, desc}
+export { title, desc };

@@ -1,24 +1,19 @@
-import styled from 'styled-components';
-import {media} from '../../theme/sizes';
+import styled from "styled-components";
+import { media } from "../../theme/sizes";
 
 const CardGroup = styled.section`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 25px;
-    
-   
-    ${
-        media.tablet`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 25px;
+
+  ${media.tablet`
             grid-template-columns: 1fr 1fr;    
-       `
-    }
-    
-    ${
-        media.phone`
+       `}
+
+  ${media.phone`
             grid-template-columns: 1fr;    
-        `
-    }  
+        `}
 `;
 
-export { cardType, Card, LinkCard } from './Card';
+export { cardType, Card, LinkCard } from "./Card";
 export { CardGroup };

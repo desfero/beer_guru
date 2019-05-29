@@ -2,7 +2,8 @@
 
 > layout
 
-[![NPM](https://img.shields.io/npm/v/layout.svg)](https://www.npmjs.com/package/layout) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/layout.svg)](https://www.npmjs.com/package/layout)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
@@ -13,15 +14,13 @@ npm install --save layout
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import MyComponent from 'layout'
+import MyComponent from "layout";
 
 class Example extends Component {
-  render () {
-    return (
-      <MyComponent />
-    )
+  render() {
+    return <MyComponent />;
   }
 }
 ```

@@ -9,9 +9,12 @@
     "lint": "lerna run lint",
     "test": "lerna run test",
     "update-version": "lerna publish --skip-git --skip-npm --force-publish '*'",
-    "check-packages": "yarn clean && yarn compile && yarn test && yarn lint"
+    "check-packages": "yarn clean && yarn compile && yarn test && yarn lint",
+    "format": "prettier --list-different '**/*.{js,json,md,css}'",
+    "format:fix": "prettier --write '**/*.{js,json,md,css}'"
   },
   "devDependencies": {
-    "lerna": "^3.0.6"
+    "lerna": "^3.0.6",
+    "prettier": "^1.17.1"
   }
 }

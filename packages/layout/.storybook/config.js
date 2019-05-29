@@ -1,13 +1,13 @@
-import { addDecorator, configure } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs/react';
-import { checkA11y } from '@storybook/addon-a11y';
-import { withThemes } from 'storybook-styled-components';
-import StoryRouter from 'storybook-react-router';
+import { addDecorator, configure } from "@storybook/react";
+import { withKnobs } from "@storybook/addon-knobs/react";
+import { checkA11y } from "@storybook/addon-a11y";
+import { withThemes } from "storybook-styled-components";
+import StoryRouter from "storybook-react-router";
 
-import { theme } from '../src'
+import { theme } from "../src";
 
 const themes = {
-  'Default': theme,
+  Default: theme,
 };
 
 addDecorator(withKnobs);

@@ -1,6 +1,9 @@
-import {compose, omit} from 'ramda';
-import {mapProps} from 'recompose';
+import { compose, omit } from "ramda";
+import { mapProps } from "recompose";
 
-const omitProps = compose(mapProps, omit);
+const omitProps = compose(
+  mapProps,
+  omit,
+);
 
-export {omitProps};
+export { omitProps };

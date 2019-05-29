@@ -1,8 +1,8 @@
-import {all} from 'redux-saga/effects';
-import {sagas} from '../sagas';
+import { all } from "redux-saga/effects";
+import { sagas } from "../sagas";
 
 function* rootSaga() {
-    yield all(sagas);
+  yield all(sagas);
 }
 
-export {rootSaga};
+export { rootSaga };

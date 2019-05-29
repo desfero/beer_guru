@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
-const Header = () => (
-    <h1>BeerGuru</h1>
-);
+const Header = () => <h1>BeerGuru</h1>;
 
-export {Header};
+export { Header };

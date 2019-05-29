@@ -1,32 +1,32 @@
-import {injectGlobal} from 'styled-components';
-import {cardType} from '../components/CardGroup/Card';
+import { injectGlobal } from "styled-components";
+import { cardType } from "../components/CardGroup/Card";
 
 const base = {
-    fontColor: '#747474',
-    bgColor: '#F8F8F8',
-    mainColor: '#F5C34C',
-    containerWidth: '700px',
-    modalWidth: '500px',
+  fontColor: "#747474",
+  bgColor: "#F8F8F8",
+  mainColor: "#F5C34C",
+  containerWidth: "700px",
+  modalWidth: "500px",
 };
 
 const theme = {
-    ...base,
-    card: {
-        [cardType.default]: {
-            background: '#FFF',
-            headingColor: base.mainColor,
-            paragraphColor: '#BABABA',
-            baseSize: '13px',
-        },
-        [cardType.lite]: {
-            background: '#FFF',
-            baseSize: '12px',
-        }
+  ...base,
+  card: {
+    [cardType.default]: {
+      background: "#FFF",
+      headingColor: base.mainColor,
+      paragraphColor: "#BABABA",
+      baseSize: "13px",
     },
-    loader: {
-        indicator: base.mainColor,
-        background: '#EAEAEA',
-    }
+    [cardType.lite]: {
+      background: "#FFF",
+      baseSize: "12px",
+    },
+  },
+  loader: {
+    indicator: base.mainColor,
+    background: "#EAEAEA",
+  },
 };
 
 // Global styles
@@ -37,4 +37,4 @@ injectGlobal`
   }
 `;
 
-export {theme};
+export { theme };
