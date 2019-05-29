@@ -1,5 +1,5 @@
 import {injectGlobal} from 'styled-components';
-import {cardType} from '../components/Card';
+import {cardType} from '../components/CardGroup/Card';
 
 const base = {
     fontColor: '#747474',

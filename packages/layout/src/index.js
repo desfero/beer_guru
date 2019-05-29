@@ -1,6 +1,5 @@
 // Components
-export { cardType, Card, LinkCard } from './components/Card';
-export { CardGroup } from './components/CardGroup';
+export { cardType, Card, CardGroup, LinkCard } from './components/CardGroup';
 export { Loader, BigLoader } from './components/Loader';
 export { Modal } from './components/Modal';
 

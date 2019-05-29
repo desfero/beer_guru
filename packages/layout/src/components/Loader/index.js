@@ -49,4 +49,4 @@ const Loader = compose(
 
 const BigLoader = withProps({ size: LOADER_SIZE.big })(Loader);
 
-export { Loader, BigLoader };
+export { Loader, BigLoader, LOADER_SIZE };

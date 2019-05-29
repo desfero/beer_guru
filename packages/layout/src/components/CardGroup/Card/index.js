@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { omitProps } from '../../hocs/omitProps';
+import { omitProps } from '../../../hocs/omitProps/index';
 
 const cardType = {
     lite: Symbol('lite'),
