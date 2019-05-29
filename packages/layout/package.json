@@ -1,7 +1,7 @@
 {
   "name": "@beer/layout",
   "version": "1.0.0",
-  "description": "App Design System",
+  "description": "Beer Guru Pattern Library",
   "author": "whaberek",
   "license": "MIT",
   "repository": "desfero/beer_guru",
@@ -20,10 +20,9 @@
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
-    "prop-types": "^15.5.4",
     "ramda": "^0.25.0",
-    "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-router-dom": "^4.3.1",
     "recompose": "^0.27.1",
     "styled-components": "^3.3.3"
@@ -45,12 +44,6 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.26.0",
     "cross-env": "^5.1.4",
-    "prop-types": "^15.5.4",
-    "ramda": "^0.25.0",
-    "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0",
-    "react-router-dom": "^4.3.1",
-    "recompose": "^0.27.1",
     "rollup": "^0.62.0",
     "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-commonjs": "^9.1.3",
@@ -59,7 +52,13 @@
     "rollup-plugin-url": "^1.4.0",
     "storybook-react-router": "^1.0.1",
     "storybook-styled-components": "^1.1.2",
-    "styled-components": "^3.3.3"
+    "styled-components": "^3.3.3",
+    "prop-types": "^15.5.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-router-dom": "^4.3.1",
+    "ramda": "^0.25.0",
+    "recompose": "^0.30.0"
   },
   "files": [
     "dist"

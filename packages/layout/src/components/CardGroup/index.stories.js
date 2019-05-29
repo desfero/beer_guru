@@ -1,20 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withStorySource } from '@storybook/addon-storysource';
+import {storiesOf} from '@storybook/react';
 
-import { cardType, Card, CardGroup, LinkCard } from './';
-import { title, desc } from './index.const'
+import {cardType, Card, CardGroup, LinkCard} from './';
+import {title, desc} from './index.const'
 
 storiesOf('CardGroup', module)
-  .addDecorator(withStorySource(
-    `import { cardType, Card } from '@beer/layout';
-
-<Card type={cardType}>
-    <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
-    <h2>Example text</h2>
-    <p>Example desc</p>
-</Card>`
-  ))
   .add('Card/default', () => (
     <CardGroup>
       <Card
@@ -36,30 +26,18 @@ storiesOf('CardGroup', module)
         <p>{desc}</p>
       </Card>
     </CardGroup>
-  ));
-
-storiesOf('CardGroup', module)
-  .addDecorator(withStorySource(
-    `import { cardType, LinkCard } from '@beer/layout';
-
-<LinkCard type={cardType}>
-    <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
-    <h2>Example text</h2>
-    <p>Example desc</p>
-</LinkCard>`
-  ))
-  .add('LinkCard/default', () => (
-    <CardGroup>
-      <LinkCard
-        type={cardType.default}
-        to={'Modal'}
-      >
-        <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
-        <h2>{title}</h2>
-        <p>{desc}</p>
-      </LinkCard>
-    </CardGroup>
-  ))
+  )).add('LinkCard/default', () => (
+  <CardGroup>
+    <LinkCard
+      type={cardType.default}
+      to={'Modal'}
+    >
+      <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
+      <h2>{title}</h2>
+      <p>{desc}</p>
+    </LinkCard>
+  </CardGroup>
+))
   .add('LinkCard/lite', () => (
     <CardGroup>
       <LinkCard
@@ -71,52 +49,28 @@ storiesOf('CardGroup', module)
         <p>{desc}</p>
       </LinkCard>
     </CardGroup>
-  ));
-
-storiesOf('CardGroup', module)
-  .addDecorator(withStorySource(
-    `import { cardType, Card } from '@beer/layout';
-
-<CardGroup>
-    <Card type={cardType}>
-        <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
-        <h2>Example text</h2>
-        <p>Example desc</p>
+  )).add('multiple element', () => (
+  <CardGroup>
+    <Card
+      type={cardType.default}
+    >
+      <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
+      <h2>{title}</h2>
+      <p>{desc}</p>
     </Card>
-    <Card type={cardType}>
-        <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
-        <h2>Example text</h2>
-        <p>Example desc</p>
+    <Card
+      type={cardType.default}
+    >
+      <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
+      <h2>{title}</h2>
+      <p>{desc}</p>
     </Card>
-    <Card type={cardType}>
-        <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
-        <h2>Example text</h2>
-        <p>Example desc</p>
+    <Card
+      type={cardType.default}
+    >
+      <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
+      <h2>{title}</h2>
+      <p>{desc}</p>
     </Card>
-</CardGroup>`
-  ))
-  .add('multiple element', () => (
-    <CardGroup>
-      <Card
-        type={cardType.default}
-      >
-        <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
-        <h2>{title}</h2>
-        <p>{desc}</p>
-      </Card>
-      <Card
-        type={cardType.default}
-      >
-        <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
-        <h2>{title}</h2>
-        <p>{desc}</p>
-      </Card>
-      <Card
-        type={cardType.default}
-      >
-        <img src="https://images.punkapi.com/v2/7.png" height="100" alt="Example image"/>
-        <h2>{title}</h2>
-        <p>{desc}</p>
-      </Card>
-    </CardGroup>
-  ));
+  </CardGroup>
+));

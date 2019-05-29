@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {FormattedMessage} from 'react-intl';
 import {SimilarBeers} from './SimilarBeers';
 
 const BeerContainer = styled.section`
@@ -52,7 +53,7 @@ const BeerLayout = ({beer}) => (
 
         <aside>
             <section>
-                <h4>You might also like:</h4>
+                <h4><FormattedMessage id="beer.similar-beers" />:</h4>
                 <SimilarBeers beer={beer}/>
             </section>
         </aside>
