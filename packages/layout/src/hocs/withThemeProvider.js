@@ -1,7 +1,8 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
+import { theme } from "../theme";
 
-const withThemeProvider = theme => Wrapper => props => (
+const withThemeProvider = () => Wrapper => props => (
   <ThemeProvider theme={theme}>
     <Wrapper {...props} />
   </ThemeProvider>

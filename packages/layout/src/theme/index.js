@@ -1,7 +1,9 @@
 import { injectGlobal } from "styled-components";
+
 import { cardType } from "../components/CardGroup/Card";
 
 const base = {
+  fontFamily: 'Arial, "Helvetica Neue", Helvetica, sans-serif',
   fontColor: "#747474",
   bgColor: "#F8F8F8",
   mainColor: "#F5C34C",
@@ -34,6 +36,7 @@ injectGlobal`
   body {
     background: ${theme.bgColor};
     color: ${theme.fontColor};
+    font-family: ${theme.fontFamily};
   }
 `;
 
