@@ -1,11 +1,10 @@
 import { connect } from "react-redux";
 import { branch, compose, lifecycle, renderComponent } from "recompose";
-import { theme } from "@beer/layout";
+import { withLayout } from "@beer/layout";
 import { store } from "../store/index";
 import { CriticalUIError } from "./CriticalUIError";
 import { logCriticalUIError } from "../actions";
 import { criticalUIErrorSelector } from "../reducers";
-import { withThemeProvider } from "../hocs/withThemeProvider";
 import { withStoreProvider } from "../hocs/withStoreProvider";
 import { AppLayout } from "./AppLayout";
 import { withI18N } from "../hocs/withI18N";
@@ -28,7 +27,7 @@ const App = compose(
     },
   }),
   branch(props => props.criticalUIError, renderComponent(CriticalUIError)),
-  withThemeProvider(theme),
+  withLayout(),
   withI18N(),
 )(AppLayout);
 

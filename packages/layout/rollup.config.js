@@ -22,6 +22,10 @@ export default {
       exclude: "node_modules/**",
     }),
     resolve(),
-    commonjs(),
+    commonjs({
+      namedExports: {
+        "react-is": ["isForwardRef", "isValidElementType"],
+      },
+    }),
   ],
 };
