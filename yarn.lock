@@ -2764,15 +2764,52 @@
     "@types/istanbul-lib-coverage" "*"
     "@types/istanbul-lib-report" "*"
 
+"@types/jest-diff@*":
+  version "20.0.1"
+  resolved "https://registry.yarnpkg.com/@types/jest-diff/-/jest-diff-20.0.1.tgz#35cc15b9c4f30a18ef21852e255fdb02f6d59b89"
+  integrity sha512-yALhelO3i0hqZwhjtcr6dYyaLoCHbAMshwtj6cGxTvHZAKXHsYGdff6E8EPw3xLKY0ELUTQ69Q1rQiJENnccMA==
+
+"@types/jest@^24.0.17":
+  version "24.0.17"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-24.0.17.tgz#b66ea026efb746eb5db1356ee28518aaff7af416"
+  integrity sha512-1cy3xkOAfSYn78dsBWy4M3h/QF/HeWPchNFDjysVtp3GHeTdSmtluNnELfCmfNRRHo0OWEcpf+NsEJQvwQfdqQ==
+  dependencies:
+    "@types/jest-diff" "*"
+
 "@types/node@*":
   version "12.0.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.4.tgz#46832183115c904410c275e34cf9403992999c32"
   integrity sha512-j8YL2C0fXq7IONwl/Ud5Kt0PeXw22zGERt+HSSnwbKOJVsAGkEz3sFCYwaF9IOuoG1HOtE0vKCj6sXF7Q0+Vaw==
 
+"@types/node@^12.7.1":
+  version "12.7.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.1.tgz#3b5c3a26393c19b400844ac422bd0f631a94d69d"
+  integrity sha512-aK9jxMypeSrhiYofWWBf/T7O+KwaiAHzM4sveCdWPn71lzUSMimRnKzhXDKfKwV1kWoBo2P1aGgaIYGLf9/ljw==
+
+"@types/prop-types@*":
+  version "15.7.1"
+  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.1.tgz#f1a11e7babb0c3cad68100be381d1e064c68f1f6"
+  integrity sha512-CFzn9idOEpHrgdw8JsoTkaDDyRWk1jrzIV8djzcgpq0y9tG4B4lFT+Nxh52DVpDXV+n4+NPNv7M1Dj5uMp6XFg==
+
 "@types/q@^1.5.1":
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
   integrity sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
+
+"@types/react-dom@^16.8.5":
+  version "16.8.5"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.8.5.tgz#3e3f4d99199391a7fb40aa3a155c8dd99b899cbd"
+  integrity sha512-idCEjROZ2cqh29+trmTmZhsBAUNQuYrF92JHKzZ5+aiFM1mlSk3bb23CK7HhYuOY75Apgap5y2jTyHzaM2AJGA==
+  dependencies:
+    "@types/react" "*"
+
+"@types/react@*", "@types/react@^16.8.25":
+  version "16.8.25"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.25.tgz#0247613ab58b1b11ba10fed662e1947c5f2bb89c"
+  integrity sha512-ydAAkLnNTC4oYSxJ3zwK/4QcVmEecACJ4ZdxXITbxz/dhahBSDKY6OQ1uawAW6rE/7kfHccxulYLSAIZVrSq0A==
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
 
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
@@ -5304,6 +5341,11 @@ cssstyle@^1.0.0, cssstyle@^1.1.1:
   integrity sha512-43wY3kl1CVQSvL7wUY1qXkxVGkStjpkDmVjiIKX8R97uhajy8Bybay78uOtqvh7Q5GK75dNPfW0geWjE6qQQow==
   dependencies:
     cssom "0.3.x"
+
+csstype@^2.2.0:
+  version "2.6.6"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.6.tgz#c34f8226a94bbb10c32cc0d714afdf942291fc41"
+  integrity sha512-RpFbQGUE74iyPgvr46U9t1xoQBM8T4BL8SxrN66Le2xYAPSaDJJKeztV3awugusb3g3G9iL8StmkBBXhcbbXhg==
 
 csstype@^2.5.2, csstype@^2.5.7:
   version "2.6.5"
@@ -13973,6 +14015,11 @@ typescript-tuple@^2.1.0:
   integrity sha512-Zcr0lbt8z5ZdEzERHAMAniTiIKerFCMgd7yjq1fPnDJ43et/k9twIFQMUYff9k5oXcsQ0WpvFcgzK2ZKASoW6Q==
   dependencies:
     typescript-compare "^0.0.2"
+
+typescript@^3.5.3:
+  version "3.5.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.5.3.tgz#c830f657f93f1ea846819e929092f5fe5983e977"
+  integrity sha512-ACzBtm/PhXBDId6a6sDJfroT2pOWt/oOnk4/dElG5G33ZL776N3Y6/6bKZJBFpd+b05F3Ct9qDjMeJmRWtE2/g==
 
 ua-parser-js@^0.7.18:
   version "0.7.19"
