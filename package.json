@@ -10,8 +10,8 @@
     "test": "lerna run test",
     "update-version": "lerna publish --skip-git --skip-npm --force-publish '*'",
     "check-packages": "yarn clean && yarn compile && yarn test && yarn lint",
-    "format": "prettier --list-different '**/*.{js,json,md,css}'",
-    "format:fix": "prettier --write '**/*.{js,json,md,css}'"
+    "format": "prettier --list-different '**/*.{js,json,md,css,ts,tsx}'",
+    "format:fix": "prettier --write '**/*.{js,json,md,css,ts,tsx}'"
   },
   "devDependencies": {
     "lerna": "^3.0.6",
