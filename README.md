@@ -1,4 +1,4 @@
-React production ready boilerplate [WIP]
+React production ready boilerplate
 
 ### TODO
 
